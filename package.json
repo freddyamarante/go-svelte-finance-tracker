@@ -1,0 +1,16 @@
+{
+  "name": "personal-finance-app",
+  "version": "1.0.0",
+  "description": "A personal finance tracker with Go and Svelte",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"cd backend && go run .\"",
+    "start": "echo 'Build frontend and run backend for production'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

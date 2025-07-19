@@ -1,0 +1,3 @@
+## Finance Tracker using Svelte and Go!
+
+  Current work in progress...
