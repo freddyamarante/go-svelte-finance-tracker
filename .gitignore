@@ -108,6 +108,9 @@ temp/
 *.sqlite
 *.sqlite3
 
+# Data directory for persistent storage
+data/
+
 # Backup files
 *.bak
 *.backup

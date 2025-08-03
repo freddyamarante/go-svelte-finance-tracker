@@ -8,6 +8,7 @@ services:
     volumes:
       - ./backend:/app
       - /app/go
+      - ./data:/app/data
     env_file:
       - .env
     environment:
@@ -17,7 +18,7 @@ services:
       - LOG_SQL=false
       - LOG_CORS=false
       - BACKEND_HOST=0.0.0.0
-      - DB_PATH=memory.db
+      - DB_PATH=/app/data/finance.db
     networks:
       - ${DOCKER_NETWORK:-finance-network}
 

@@ -10,6 +10,7 @@ import (
 
 	"github.com/freddyamarante/go-svelte-finance-tracker/internal/config"
 	"github.com/freddyamarante/go-svelte-finance-tracker/internal/handlers"
+	"github.com/freddyamarante/go-svelte-finance-tracker/internal/middleware"
 )
 
 // Server represents the HTTP server
@@ -62,9 +63,24 @@ func setupRoutes(router *gin.Engine) {
 	// Health check
 	router.GET("/health", handlers.HealthCheck)
 
-	// Transaction routes
-	router.GET("/transactions", handlers.GetTransactions)
-	router.POST("/transactions", handlers.CreateTransaction)
+	// Auth routes (public)
+	router.POST("/auth/register", handlers.Register)
+	router.POST("/auth/login", handlers.Login)
+	router.POST("/auth/logout", handlers.Logout)
+
+	// Protected routes
+	protected := router.Group("/")
+	protected.Use(middleware.AuthMiddleware())
+	{
+		// User profile routes
+		protected.GET("/auth/profile", handlers.GetProfile)
+		protected.PUT("/auth/profile", handlers.UpdateProfile)
+		protected.PUT("/auth/change-password", handlers.ChangePassword)
+
+		// Transaction routes (now protected)
+		protected.GET("/transactions", handlers.GetTransactions)
+		protected.POST("/transactions", handlers.CreateTransaction)
+	}
 }
 
 // Start starts the server
@@ -72,4 +88,4 @@ func (s *Server) Start() error {
 	addr := fmt.Sprintf("%s:%s", s.config.Server.Host, s.config.Server.Port)
 	log.Printf("Server starting on %s", addr)
 	return s.router.Run(addr)
-} 
+}
