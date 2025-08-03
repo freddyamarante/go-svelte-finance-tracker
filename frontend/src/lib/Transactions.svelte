@@ -9,7 +9,7 @@
 	}
 
 	// Get API URL from environment or use default
-	const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+	const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 	let transactions: Transaction[] = [];
 	let loading = true;

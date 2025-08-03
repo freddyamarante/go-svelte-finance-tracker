@@ -154,32 +154,3 @@ docker-compose exec frontend sh
 # Check container status
 docker-compose ps
 ```
-
-## Performance Optimization
-
-### Production Optimizations
-- Multi-stage builds for smaller images
-- Nginx for serving static files
-- Proper caching headers
-- Security headers
-
-### Development Optimizations
-- Volume mounts for fast file access
-- Hot reloading for both frontend and backend
-- Shared networks for service communication
-
-## Security Considerations
-
-- Frontend runs behind Nginx with security headers
-- Backend CORS is configured for development
-- Database file permissions are managed
-- No sensitive data in images
-
-## Next Steps
-
-For production deployment, consider:
-1. Setting up a reverse proxy (Nginx/Traefik)
-2. Implementing SSL/TLS certificates
-3. Setting up monitoring and logging
-4. Database migration strategy
-5. CI/CD pipeline integration 

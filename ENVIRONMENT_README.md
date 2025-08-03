@@ -215,36 +215,3 @@ VITE_API_URL=https://api.yourdomain.com
 # Validate environment configuration
 ./scripts/validate-env.sh
 ```
-
-## Best Practices
-
-1. **Use descriptive variable names** (e.g., `BACKEND_PORT` instead of `PORT`)
-2. **Group related variables** with clear sections
-3. **Provide sensible defaults** for all variables
-4. **Document all variables** in README files
-5. **Use environment-specific files** for different deployments
-6. **Never commit sensitive data** to version control
-
-## Migration from Old Configuration
-
-If you were using the old backend-only environment configuration:
-
-1. **Backup your old configuration:**
-   ```bash
-   cp backend/.env backend/.env.backup
-   ```
-
-2. **Create new root-level configuration:**
-   ```bash
-   ./scripts/setup-env.sh
-   ```
-
-3. **Migrate your settings:**
-   - `PORT` → `BACKEND_PORT`
-   - `HOST` → `BACKEND_HOST`
-   - Add frontend configuration as needed
-
-4. **Test the new configuration:**
-   ```bash
-   docker-compose -f docker-compose.dev.yml up
-   ``` 
