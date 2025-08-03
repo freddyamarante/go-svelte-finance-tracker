@@ -8,6 +8,9 @@
 		type: 'income' | 'expense';
 	}
 
+	// Get API URL from environment or use default
+	const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+
 	let transactions: Transaction[] = [];
 	let loading = true;
 	let error: string | null = null;
@@ -16,7 +19,7 @@
 		try {
 			loading = true;
 			error = null;
-			const response = await fetch('http://localhost:8080/transactions');
+			const response = await fetch(`${API_BASE_URL}/transactions`);
 
 			if (!response.ok) {
 				throw new Error(`HTTP error! status: ${response.status}`);

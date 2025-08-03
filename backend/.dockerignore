@@ -1,0 +1,42 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database files (will be created at runtime)
+*.db
+*.sqlite
+
+# Build artifacts
+main
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test files
+*_test.go
+testdata/
+
+# Documentation
+README.md
+*.md
+
+# Temporary files
+tmp/
+data/
+
+# Environment files
+.env
+.env.local
+.env.production 

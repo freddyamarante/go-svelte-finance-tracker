@@ -1,0 +1,45 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "${BACKEND_PORT}:8080"
+    volumes:
+      - ./backend:/app
+      - /app/go
+      - finance_db:/app/data
+    env_file:
+      - .env
+    environment:
+      - GIN_MODE=release
+      - ENV=production
+      - LOG_REQUESTS=false
+      - LOG_SQL=false
+      - LOG_CORS=false
+      - BACKEND_HOST=0.0.0.0
+      - DB_PATH=/app/data/finance.db
+    networks:
+      - ${DOCKER_NETWORK:-finance-network}
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "${FRONTEND_PORT:-3000}:80"
+    depends_on:
+      - backend
+    env_file:
+      - .env
+    environment:
+      - VITE_API_URL=http://backend:8080
+    networks:
+      - ${DOCKER_NETWORK:-finance-network}
+
+volumes:
+  finance_db:
+
+networks:
+  finance-network:
+    driver: bridge 

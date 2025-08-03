@@ -4,7 +4,7 @@
   "description": "A personal finance tracker with Go and Svelte",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix frontend\" \"cd backend && go run .\"",
+    "dev": "concurrently \"cd frontend && bun run dev\" \"cd backend && go run .\"",
     "start": "echo 'Build frontend and run backend for production'"
   },
   "keywords": [],
