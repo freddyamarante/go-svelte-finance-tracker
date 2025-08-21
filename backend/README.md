@@ -98,7 +98,7 @@ This backend follows clean architecture principles with clear separation of conc
 
 See `env.example` for available configuration options:
 
-- `BACKEND_PORT`: Server port (default: 8080)
+- `BACKEND_PORT`: Server port (default: 6060)
 - `BACKEND_HOST`: Server host (default: localhost)
 - `DB_PATH`: Database file path (default: finance.db)
 - `LOG_REQUESTS`: Enable HTTP request logging (default: true)

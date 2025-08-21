@@ -28,7 +28,7 @@ A finance tracking application built with Svelte frontend and Go backend.
 
 3. **Access the application:**
    - Frontend: http://localhost:5173 (dev) or http://localhost:3000 (prod)
-   - Backend API: http://localhost:8080
+   - Backend API: http://localhost:6060
 
 ## Development
 

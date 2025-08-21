@@ -34,7 +34,7 @@ This project now uses a centralized environment configuration system where all e
 ### Backend Configuration
 | Variable | Type | Default | Description |
 |----------|------|---------|-------------|
-| `BACKEND_PORT` | string | `8080` | Backend server port |
+| `BACKEND_PORT` | string | `6060` | Backend server port |
 | `BACKEND_HOST` | string | `localhost` | Backend server host |
 | `DB_PATH` | string | `finance.db` | SQLite database file path |
 | `LOG_REQUESTS` | boolean | `true` | Enable HTTP request logging |
@@ -44,7 +44,7 @@ This project now uses a centralized environment configuration system where all e
 ### Frontend Configuration
 | Variable | Type | Default | Description |
 |----------|------|---------|-------------|
-| `VITE_API_URL` | string | `http://localhost:8080` | Backend API URL |
+| `VITE_API_URL` | string | `http://localhost:6060` | Backend API URL |
 | `VITE_APP_NAME` | string | `Finance Tracker` | Application name for frontend |
 | `FRONTEND_PORT` | string | `5173` | Frontend development port |
 | `FRONTEND_HOST` | string | `localhost` | Frontend development host |
@@ -70,19 +70,19 @@ This project now uses a centralized environment configuration system where all e
 ```bash
 # .env
 ENV=development
-BACKEND_PORT=8080
+BACKEND_PORT=6060
 FRONTEND_PORT=5173
 LOG_REQUESTS=true
 LOG_SQL=false
 LOG_CORS=false
-VITE_API_URL=http://localhost:8080
+VITE_API_URL=http://localhost:6060
 ```
 
 ### Production Environment
 ```bash
 # .env
 ENV=production
-BACKEND_PORT=8080
+BACKEND_PORT=6060
 FRONTEND_PORT=3000
 LOG_REQUESTS=false
 LOG_SQL=false
@@ -94,12 +94,12 @@ VITE_API_URL=https://api.yourdomain.com
 ```bash
 # .env
 ENV=development
-BACKEND_PORT=8080
+BACKEND_PORT=6060
 FRONTEND_PORT=5173
 LOG_REQUESTS=true
 LOG_SQL=true
 LOG_CORS=true
-VITE_API_URL=http://localhost:8080
+VITE_API_URL=http://localhost:6060
 ```
 
 ## Usage Patterns
@@ -204,7 +204,7 @@ VITE_API_URL=https://api.yourdomain.com
 3. **Port conflicts:**
    ```bash
    # Check what's using the port
-   lsof -i :8080
+   lsof -i :6060
    
    # Change port in .env
    BACKEND_PORT=9000

@@ -47,7 +47,7 @@ type CORSConfig struct {
 func Load() *Config {
 	return &Config{
 		Server: ServerConfig{
-			Port: getEnv("BACKEND_PORT", "8080"),
+			Port: getEnv("BACKEND_PORT", "6060"),
 			Host: getEnv("BACKEND_HOST", "localhost"),
 		},
 		Database: DatabaseConfig{
@@ -96,4 +96,4 @@ func getEnvInt(key string, defaultValue int) int {
 		}
 	}
 	return defaultValue
-} 
+}

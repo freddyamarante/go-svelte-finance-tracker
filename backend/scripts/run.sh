@@ -5,7 +5,7 @@ LOG_REQUESTS=${LOG_REQUESTS:-true}
 LOG_SQL=${LOG_SQL:-false}
 LOG_CORS=${LOG_CORS:-false}
 ENV=${ENV:-development}
-BACKEND_PORT=${BACKEND_PORT:-8080}
+BACKEND_PORT=${BACKEND_PORT:-6060}
 BACKEND_HOST=${BACKEND_HOST:-localhost}
 
 echo "Starting backend with configuration:"

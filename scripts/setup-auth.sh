@@ -34,7 +34,7 @@ echo ""
 echo "🧪 Testing sample user login..."
 
 # Test the sample user login
-response=$(curl -s -X POST http://localhost:8080/auth/login \
+response=$(curl -s -X POST http://localhost:6060/auth/login \
   -H "Content-Type: application/json" \
   -d '{"email":"demo@example.com","password":"demo123"}')
 
@@ -43,7 +43,7 @@ if echo "$response" | grep -q "token"; then
     echo "🎉 Authentication is now automated!"
     echo ""
     echo "📝 You can now use these credentials in Postman:"
-    echo "   POST http://localhost:8080/auth/login"
+    echo "   POST http://localhost:6060/auth/login"
     echo "   Body: {\"email\":\"demo@example.com\",\"password\":\"demo123\"}"
 else
     echo "❌ Sample user login failed. Please check the logs:"
@@ -51,5 +51,5 @@ else
 fi
 
 echo ""
-echo "🌐 Backend is running at: http://localhost:8080"
+echo "🌐 Backend is running at: http://localhost:6060"
 echo "🎨 Frontend is running at: http://localhost:5173" 

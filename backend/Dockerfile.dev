@@ -16,8 +16,8 @@ RUN go mod download
 # Copy source code
 COPY . .
 
-# Expose port 8080
-EXPOSE 8080
+# Expose port 6060
+EXPOSE 6060
 
 # Run with air for hot reloading
 CMD ["air"] 

@@ -16,7 +16,7 @@ This backend now supports configurable logging through environment variables. Th
 
 | Variable | Type | Default | Description |
 |----------|------|---------|-------------|
-| `PORT` | string | `8080` | Server port |
+| `PORT` | string | `6060` | Server port |
 | `HOST` | string | `localhost` | Server host |
 | `ENV` | string | `development` | Environment (development/production) |
 

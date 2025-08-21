@@ -35,7 +35,7 @@ The following user is automatically created when the database is first initializ
 
 ### 1. Login with sample user
 ```
-POST http://localhost:8080/auth/login
+POST http://localhost:6060/auth/login
 Content-Type: application/json
 
 {
@@ -46,7 +46,7 @@ Content-Type: application/json
 
 ### 2. Use the JWT token for protected endpoints
 ```
-GET http://localhost:8080/transactions
+GET http://localhost:6060/transactions
 Authorization: Bearer <your-jwt-token>
 ```
 

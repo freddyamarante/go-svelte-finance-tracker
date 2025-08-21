@@ -11,7 +11,7 @@ docker-compose up --build
 
 # Access the application
 # Frontend: http://localhost:3000
-# Backend API: http://localhost:8080
+# Backend API: http://localhost:6060
 ```
 
 ### Development Build
@@ -21,7 +21,7 @@ docker-compose -f docker-compose.dev.yml up --build
 
 # Access the application
 # Frontend: http://localhost:5173
-# Backend API: http://localhost:8080
+# Backend API: http://localhost:6060
 ```
 
 ## Architecture
@@ -29,7 +29,7 @@ docker-compose -f docker-compose.dev.yml up --build
 The application consists of two main services:
 
 ### Backend (Go + Gin)
-- **Port**: 8080
+- **Port**: 6060
 - **Database**: SQLite (file-based)
 - **Framework**: Gin with GORM
 - **Features**: REST API for transactions
@@ -100,7 +100,7 @@ docker-compose down
 ## Environment Variables
 
 ### Frontend
-- `VITE_API_URL`: Backend API URL (default: http://localhost:8080)
+- `VITE_API_URL`: Backend API URL (default: http://localhost:6060)
 
 ### Backend
 - `GIN_MODE`: Gin mode (debug/release)
@@ -121,7 +121,7 @@ For production, consider:
 1. **Port Already in Use**
    ```bash
    # Check what's using the port
-   lsof -i :8080
+   lsof -i :6060
    lsof -i :3000
    
    # Stop conflicting services
